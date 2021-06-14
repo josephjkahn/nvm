@@ -1,3 +1,4 @@
+
 #!/bin/sh
 
 die () { echo "$@" ; exit 1; }
@@ -35,3 +36,7 @@ EXPECTED_OUTPUT='Binary download failed. Download from source aborted.'
 if [ "${OUTPUT#*$EXPECTED_OUTPUT}" != "${OUTPUT}" ]; then
   die "No source binary flag is active and should have returned >${EXPECTED_OUTPUT}<. Instead it returned >${OUTPUT}<"
 fi
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+
+
+
